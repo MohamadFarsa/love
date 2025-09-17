@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #b24053, #ff7eb3);
+  overflow: hidden;
+  font-family: "Tahoma", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.text-box {
+  display: inline-block;
+  direction: rtl;
+  text-align: right;
+  max-width: 90%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  border-left: 2px solid white;
+  border-right: none;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3s steps(40, end) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.heart {
+  position: absolute;
+  color: #fff;
+  font-size: 20px;
+  animation: float 5s infinite;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
+
+/* استایل جعبه موزیک */
+.music-box {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 15px 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.music-box:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%) scale(1.05);
+}
+
+.music-box p {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+audio {
+  width: 250px;
+  border-radius: 10px;
+}
+
+/* 📱 ریسپانسیو برای موبایل */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem;
+    animation: typing 4s steps(30, end) forwards, blink 0.7s infinite;
+  }
+
+  .music-box {
+    padding: 10px 15px;
+  }
+
+  .music-box p {
+    font-size: 1rem;
+  }
+
+  audio {
+    width: 200px;
+  }
+}

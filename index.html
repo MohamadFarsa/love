@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forever Us</title>
+  <link rel="stylesheet" href="footer.css">
+  <link rel="icon" type=".png" href="./mail.png">
+  <link rel="stylesheet" href="style.css">     <!-- استایل اصلی -->
+  <link rel="stylesheet" href="nav.css">       <!-- استایل منو -->
+</head>
+<body>
+  <!-- 🔥 ناوبری -->
+  <nav>
+    <a href="">صفحه اصلی</a>
+    <a href="./gallery.html" target="_blank">گالری</a>
+    <a href="./videos.html">ویدیوها</a>
+    <a href="about.html">درباره من</a>
+  </nav>
+
+  <!-- بخش اصلی -->
+  <div class="text-box" id="home">
+        <h1 style="font-size: 1.5rem;" > تو قشنگ ترین دلیل لبخند منی ...!</h1>
+  </div>
+
+  <!-- جعبه موزیک -->
+  <div class="music-box">
+    <p>این اهنگ توصیفت میکنه❤️</p>
+    <audio controls>
+      <source src="./Amir Tataloo - Ba To [320].mp3" type="audio/mpeg">
+      مرورگر شما از پخش موزیک پشتیبانی نمی‌کند.
+    </audio>
+  </div>
+
+  <script>
+    // ایجاد قلب‌های شناور
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gallery</title>
+  <link rel="stylesheet" href="./nav.css">
+  <link rel="icon" type=".png" href="./apple.png">
+  <link rel="stylesheet" href="gallery.css"> <!-- CSS جدا -->
+</head>
+<body>
+
+<header>گالری تصاویر</header>
+<nav dir="rtl">
+    <a href="index.html">صفحه اصلی</a>
+    <a href="./gallery.html" target="_blank">گالری</a>
+    <a href="./videos.html">ویدیوها</a>
+    <a href="about.html">درباره من</a>
+  </nav>
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="./Azadeh_my-love.jpg" alt="تصویر ۱">
+    <div class="overlay">My Love</div>
+  </div>
+  <div class="gallery-item">
+    <img src="./Azadeh.jpg" alt="تصویر ۲">
+    <div class="overlay">My Love</div>
+  </div>
+  <div class="gallery-item">
+    <img src="./Azadeh-.jpg" alt="تصویر ۳">
+    <div class="overlay">My Love</div>
+  </div>
+  
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="">
+</div>
+
+<script>
+  const galleryItems = document.querySelectorAll('.gallery-item img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = item.src;
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
